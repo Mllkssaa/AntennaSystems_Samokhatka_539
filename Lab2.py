@@ -92,7 +92,7 @@ print("Ширина головної пелюстки в площині E = " + 
 lengths = [len(min_x_H), len(min_x_E), len(max_x_H), len(max_x_E)]
 print("\nТаблиця. Аналіз ДС директорної антени в площинах H та E")
 print("-------------------------------------------------------")
-print("| № | 0min H | 0min E | 0max H | FH(0) | 0max E | FE(0) |")
+print("| № | θmin H | θmin E | θmax H | FH(θ) | θmax E | FE(θ) |")
 for i in range(max(lengths)):
     v1 = f"{i + 1:2d}"
     v2 = f"{min_x_H[i]:7.2f}" if i < len(min_x_H) else "   -   "
@@ -106,9 +106,9 @@ print("-------------------------------------------------------")
 
 # лінійний графік сформованих ДС
 fig, ax = plt.subplots(figsize=(20 / 2.54, 12 / 2.54))
-ax.plot(steps, F1E, linewidth=0.7, label="$F_{1E}(0)$")
-ax.plot(steps, FH, linewidth=0.7, label="$F_H(0)$")
-ax.plot(steps, FE, linewidth=0.7, label="$F_E(0)$")
+ax.plot(steps, F1E, linewidth=0.7, label="$F_{1E}(θ)$")
+ax.plot(steps, FH, linewidth=0.7, label="$F_H(θ)$")
+ax.plot(steps, FE, linewidth=0.7, label="$F_E(θ)$")
 
 if SGP_H:
     ax.plot(SGP_H / 2, level_H, "ro", markersize=4, label="Рівень 0,707 у площині H")
